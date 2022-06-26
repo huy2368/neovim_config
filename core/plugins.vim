@@ -185,7 +185,6 @@ let g:neoformat_enabled_c = ['clangformat']
 """""""""""""""""""""""""vim-signify settings""""""""""""""""""""""""""""""
 " The VCS to use
 let g:signify_vcs_list = [ 'git' ]
-
 " Change the sign for certain operations
 let g:signify_sign_change = '~'
 

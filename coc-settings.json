@@ -1,0 +1,17 @@
+{
+  "Lua.telemetry.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python",
+    "java"
+  ],
+  "java.trace.server": "verbose",
+  "java.import.maven.enabled": true,
+  "java.maven.downloadSources": true
+}

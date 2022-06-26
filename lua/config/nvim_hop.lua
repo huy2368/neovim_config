@@ -8,7 +8,11 @@ require('hop').setup({
   quit_key='<Esc>',
 })
 
-vim.keymap.set('n', 'f', function()
-  return require('hop').hint_char2()
+vim.keymap.set('n', '<space>f', function()
+  return require('hop').hint_char2({hint_offset = 0})
+end,
+{ silent = true, noremap = true, desc = "nvim-hop char2" })
+vim.keymap.set('n', '<space>F', function()
+  return require('hop').hint_char2({direction = require('hop.hint').HintDirection.BEFORE_CURSOR, hint_offset = 0})
 end,
 { silent = true, noremap = true, desc = "nvim-hop char2" })
