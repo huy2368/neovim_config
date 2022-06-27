@@ -20,11 +20,20 @@ nnoremap <leader>P m`O<ESC>p``
 
 " Shortcut for faster save and quit
 " nnoremap <silent> <leader>w :<C-U>update<CR>
-nnoremap <silent> <leader>w :bd<CR>
+nnoremap <silent> <leader>w :<C-U>bprevious <bar> bdelete #<CR>
 " Saves the file if modified and quit
 nnoremap <silent> <leader>q :<C-U>x<CR>
 " Quit all opened buffers
 nnoremap <silent> <leader>Q :<C-U>qa!<CR>
+" Close location list or quickfix list if they are present,
+" see https://superuser.com/q/355325/736190
+nnoremap<silent> \x :<C-U>windo lclose <bar> cclose<CR>
+
+" Close a buffer and switching to another buffer, do not close the
+" window, see https://stackoverflow.com/q/4465095/6064933
+" nnoremap <silent> \d :<C-U>bprevious <bar> bdelete #<CR>
+nnoremap <silent> \d :<C-U>%bd|e#<CR>
+
 
 " Navigation in the location and quickfix list
 nnoremap <silent> [l :<C-U>lprevious<CR>zv
@@ -35,14 +44,6 @@ nnoremap <silent> [q :<C-U>cprevious<CR>zv
 nnoremap <silent> ]q :<C-U>cnext<CR>zv
 nnoremap <silent> [Q :<C-U>cfirst<CR>zv
 nnoremap <silent> ]Q :<C-U>clast<CR>zv
-
-" Close location list or quickfix list if they are present,
-" see https://superuser.com/q/355325/736190
-nnoremap<silent> \x :<C-U>windo lclose <bar> cclose<CR>
-
-" Close a buffer and switching to another buffer, do not close the
-" window, see https://stackoverflow.com/q/4465095/6064933
-nnoremap <silent> \d :<C-U>bprevious <bar> bdelete #<CR>
 
 " Insert a blank line below or above current line (do not move the cursor),
 " see https://stackoverflow.com/a/16136133/6064933
