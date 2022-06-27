@@ -19,7 +19,8 @@ nnoremap <leader>p m`o<ESC>p``
 nnoremap <leader>P m`O<ESC>p``
 
 " Shortcut for faster save and quit
-nnoremap <silent> <leader>w :<C-U>update<CR>
+" nnoremap <silent> <leader>w :<C-U>update<CR>
+nnoremap <silent> <leader>w :bd<CR>
 " Saves the file if modified and quit
 nnoremap <silent> <leader>q :<C-U>x<CR>
 " Quit all opened buffers
@@ -87,6 +88,20 @@ xnoremap > >gv
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
+" Use `[g` and `]g` to navigate diagnostics.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Keys for gotos.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window (Or :help for vim keywords).
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Edit and reload init.vim quickly
 nnoremap <silent> <leader>ev :<C-U>tabnew $MYVIMRC <bar> tcd %:h<cr>
